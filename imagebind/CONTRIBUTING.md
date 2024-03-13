@@ -1,4 +1,4 @@
-# Contributing to ImageBind
+# Contributing to imagebind
 We want to make contributing to this project as easy and transparent as
 possible.
 

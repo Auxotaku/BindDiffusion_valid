@@ -17,7 +17,7 @@ from ldm.models.diffusion.ddim import DDIMSampler
 from ldm.models.diffusion.plms import PLMSSampler
 from ldm.models.diffusion.dpm_solver import DPMSolverSampler
 import PIL
-from image_bind.models.imagebind_model import ModalityType
+from imagebind.models.imagebind_model import ModalityType
 
 torch.set_grad_enabled(False)
 
@@ -311,7 +311,7 @@ def main(opt):
         all_samples = list()
         for n in trange(opt.n_iter, desc="Sampling"):
             for prompts in tqdm(data, desc="data"):
-                import image_bind.data as ibd
+                import imagebind.data as ibd
                 if opt.modality == 'audio':
                     init_audio = ibd.load_and_transform_audio_data([opt.init], device)
                     inputs = {

@@ -5,16 +5,16 @@ import numpy as np
 import os
 from omegaconf import OmegaConf
 
-import ImageBind.data as data
-from ImageBind.models import imagebind_model
-from ImageBind.models.imagebind_model import ModalityType
+import imagebind.data as data
+from imagebind.models import imagebind_model
+from imagebind.models.imagebind_model import ModalityType
 
 from ldm.models.diffusion.ddpm import ImageEmbeddingConditionedLatentDiffusion
 from ldm.models.diffusion.ddim import DDIMSampler
 
 
 class Binder:
-    """ Wrapper for ImageBind model
+    """ Wrapper for imagebind model
     """
     def __init__(self, pth_path, device='cuda'):
         self.model = imagebind_model.imagebind_huge_pth(pretrained=True, pth_path=pth_path)
@@ -51,7 +51,7 @@ def load_img(path):
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('--bind_path', type=str, default="ImageBind/.checkpoints/imagebind_huge.pth", help="path to imagebind model")
+    argparser.add_argument('--bind_path', type=str, default="imagebind/.checkpoints/imagebind_huge.pth", help="path to imagebind model")
     argparser.add_argument('--config', type=str, default='stablediffusion/configs/stable-diffusion/v2-1-stable-unclip-h-inference.yaml', help="path to diffusion config")
     argparser.add_argument('--ckpt', type=str, default='stablediffusion/checkpoints/sd21-unclip-h.ckpt', help="path to diffusion model")
     argparser.add_argument('--device', type=str, default='cuda')

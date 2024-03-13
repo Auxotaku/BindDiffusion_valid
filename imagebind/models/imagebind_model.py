@@ -14,14 +14,14 @@ from types import SimpleNamespace
 import torch
 import torch.nn as nn
 
-from image_bind.models.helpers import (
+from imagebind.models.helpers import (
     EinOpsRearrange,
     LearnableLogitScaling,
     Normalize,
     SelectElement,
     SelectEOSAndProject,
 )
-from image_bind.models.multimodal_preprocessors import (
+from imagebind.models.multimodal_preprocessors import (
     AudioPreprocessor,
     IMUPreprocessor,
     PadIm2Video,
@@ -32,7 +32,7 @@ from image_bind.models.multimodal_preprocessors import (
     ThermalPreprocessor,
 )
 
-from image_bind.models.transformer import MultiheadAttention, SimpleTransformer
+from imagebind.models.transformer import MultiheadAttention, SimpleTransformer
 
 ModalityType = SimpleNamespace(
     VISION="vision",
@@ -44,7 +44,7 @@ ModalityType = SimpleNamespace(
 )
 
 
-class ImageBindModel(nn.Module):
+class imagebindModel(nn.Module):
     def __init__(
             self,
             video_frames=2,
@@ -488,7 +488,7 @@ class ImageBindModel(nn.Module):
 
 
 def imagebind_huge(pretrained=False):
-    model = ImageBindModel(
+    model = imagebindModel(
         vision_embed_dim=1280,
         vision_num_blocks=32,
         vision_num_heads=16,
@@ -517,7 +517,7 @@ def imagebind_huge(pretrained=False):
     return model
 
 
-class ImageBindEmbedder(nn.Module):
+class imagebindEmbedder(nn.Module):
     def __init__(self):
         super().__init__()
 

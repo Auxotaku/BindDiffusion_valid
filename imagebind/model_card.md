@@ -1,4 +1,4 @@
-# Model Card for ImageBind
+# Model Card for imagebind
 
 Multimodal joint embedding model for image/video, text, audio, depth, IMU, and thermal images.
 Input any of the six modalities and get the same sized embedding that can be used for cross-modal and multimodal tasks.
@@ -15,7 +15,7 @@ Multimodal joint embedding model for image/video, text, audio, depth, IMU, and t
 - **Language(s) (NLP):** en
 - **License:** CC BY-NC-SA 4.0
 - **Resources for more information:**
-    - [GitHub Repo](https://github.com/facebookresearch/ImageBind)
+    - [GitHub Repo](https://github.com/facebookresearch/imagebind)
 
 
 # Uses
@@ -50,7 +50,7 @@ Moreover, for learning joint embeddings for other modalities such as audio, ther
 
 <!-- This should link to a Data Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
 
-ImageBind uses image-paired data for training -- (image, X) where X is one of text, audio, depth, IMU or thermal data.
+imagebind uses image-paired data for training -- (image, X) where X is one of text, audio, depth, IMU or thermal data.
 In particular, we initialize and freeze the image and text encoders using an OpenCLIP ViT-H encoder.
 We train audio embeddings using Audioset, depth embeddings using the SUN RGB-D dataset, IMU using the Ego4D dataset and thermal embeddings using the LLVIP dataset.
 We provide the exact training data details in the paper.
@@ -76,7 +76,7 @@ The models performance is measured using standard classification metrics such as
 **BibTeX:**
 ```
 @inproceedings{girdhar2023imagebind,
-  title={ImageBind: One Embedding Space To Bind Them All},
+  title={imagebind: One Embedding Space To Bind Them All},
   author={Girdhar, Rohit and El-Nouby, Alaaeldin and Liu, Zhuang
 and Singh, Mannat and Alwala, Kalyan Vasudev and Joulin, Armand and Misra, Ishan},
   booktitle={CVPR},
